@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Fix the navigation bar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;    /* Center the items horizontally */
+    margin: 80px 20px 20px; /* Adjust top margin to account for fixed nav bar */
+}
+
+.image-item {
+    position: relative; /* To position the star button relative to this container */
+    margin: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 90%; /* Default width for responsiveness */
+    max-width: 400px; /* Max width to prevent images from becoming too large */
+}
+
+.image-item img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.star-button {
+    background-color: transparent; /* No background */
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    position: absolute; /* Absolute positioning relative to the image container */
+    top: 5px;
+    right: 5px;
+    color: grey; /* Default color for unselected star */
+    border: none; /* Remove the border */
+}
+
+.star-button.selected {
+    color: blue; /* Color for selected star */
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+    }
+
+    .image-item {
+        width: 100%; /* Full width on mobile devices */
+        margin: 10px 0; /* Adjust margin for mobile view */
+    }
+}
